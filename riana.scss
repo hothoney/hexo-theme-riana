@@ -1,0 +1,217 @@
+// 全局样式
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  overflow-x: hidden;
+}
+// mixin
+@mixin hover-color{
+  &:hover{
+    transition: color ease 0.3s;
+    color: rgb(253, 48, 48)
+  }
+}
+// layout样式
+.container{
+  width: 70%;
+  max-width: 720px;
+  // border: 1px solid #000;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+// 头部样式
+.header{
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .avatar{
+    width: 130px;
+    img{
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+  .social{
+    a{
+      font-size: 1.1rem;
+      color: #000;
+      margin: 10px 5px 0 5px;
+      text-decoration: none;
+
+      @include hover-color
+    }
+  }
+}
+// 菜单栏样式
+.menubar{
+  height: 72px;
+  display: flex;
+  background-color: #fff;
+  top: 0;
+  position: sticky;
+  justify-content: space-around;
+  align-items: center;
+  box-shadow: 0 3px 4px rgba(#000,0.1);
+
+  .title{
+    text-decoration: none;
+    color: #333;
+  }
+  .menu{
+    display: flex;
+    list-style: none;
+
+    li{
+      padding: 0 10px;
+
+      a{
+        color: #333;
+        text-decoration: none;
+        @include hover-color
+      }
+    }
+  }
+}
+// 首页最近文章样式
+#recent-posts{
+  // padding: 0 20px;
+  .recent-post-item{
+    width: 100%;
+    margin-bottom: 30px;
+    img{
+      width: 100%;
+      border-radius: 10px;
+    }
+    a{
+      color: #444;
+      text-decoration: none;
+      @include hover-color;
+    }
+    time{
+      color: #555;
+      font-size: .9rem;
+    }
+    .title{
+      display: block;
+      margin: 10px 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+    .sub{
+      margin: 10px 0;
+      display: flex;
+      i{
+        color: #000;
+      }
+      a{
+        color: #555;
+        @include hover-color
+      }
+      span{
+        color: #555;
+      }
+    }
+    .categories{
+      margin-right: 10px;
+    }
+    .excerpt{
+      a{
+        display: inline-block;
+        color:rgb(253, 48, 48);
+        transition: all ease 0.3s;
+
+        &::after{
+          content: '';
+          display: block;
+          width: 0;
+          height: 1px;
+          transition: all ease 0.3s;
+          background-color: red;
+        }
+
+        &:hover{
+          color: red;
+
+          &::after{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+// 分页按钮样式
+#paginator{
+  .page-number{
+    width: 30px;
+    height: 30px;
+    padding: 5px;
+    margin: 40px 5px;
+    display: inline-block;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    border-radius: 50%;
+    transition: background-color ease 0.3s;
+    &:hover{
+      background-color: rgb(235, 235, 235);
+    }
+  }
+  .current{
+    color: #ffffff;
+    background-color: rgb(253, 48, 48);
+    &:hover{
+      background-color: rgb(255, 59, 59);
+    }
+  }
+
+  .extend{
+    @extend .page-number;
+    @include hover-color;
+    &:hover{
+      background: none;
+    }
+  }
+}
+// 页脚样式
+footer{
+  display: flex;
+  margin-bottom: 20px;
+  font-size: .9rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  span{
+    color: orange;
+  }
+
+  a{
+    display: inline-block;
+    color:rgb(253, 48, 48);
+    text-decoration: none;
+    transition: all ease 0.3s;
+
+    &::after{
+      content: '';
+      display: block;
+      width: 0;
+      height: 1px;
+      transition: all ease 0.3s;
+      background-color: red;
+    }
+
+    &:hover{
+      color: red;
+      &::after{
+        width: 100%;
+      }
+    }
+  }
+}

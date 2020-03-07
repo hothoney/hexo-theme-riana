@@ -1,0 +1,37 @@
+# html lang
+language: en
+
+# main menu navigation
+menu:
+  Home: /
+  Archives: /archives
+  Contact: /contact
+  About: /about
+
+# stylesheets loaded in the <head>
+stylesheets:
+  - /css/riana.css
+
+# scripts loaded in the end of the body
+scripts:
+  - /js/riana.js
+
+
+# 在知道自己在干什么的情况下才能修改
+
+
+# 自定义内容
+
+# 头像
+avatar: https://hoon-cc.oss-cn-shenzhen.aliyuncs.com/wp-content/uploads/2019/02/65223547_p0_master1200-3.jpg
+
+# 社交媒体(可以自行添加，保证name正确)
+socials:
+  - name: twitter
+    link: "#"
+  - name: github
+    link: "#"
+  - name: steam
+    link: '#'
+  - name: telegram
+    link: '#'

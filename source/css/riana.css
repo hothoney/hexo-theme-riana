@@ -1,0 +1,274 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.container {
+  width: 70%;
+  max-width: 720px;
+  margin: 0 auto;
+  margin-top: 40px;
+}
+
+.header {
+  padding-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.header .avatar {
+  width: 130px;
+}
+
+.header .avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.header .social a {
+  font-size: 1.1rem;
+  color: #000;
+  margin: 10px 5px 0 5px;
+  text-decoration: none;
+}
+
+.header .social a:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #fd3030;
+}
+
+.menubar {
+  height: 72px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #fff;
+  top: 0;
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+.menubar .title {
+  text-decoration: none;
+  color: #333;
+}
+
+.menubar .menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.menubar .menu li {
+  padding: 0 10px;
+}
+
+.menubar .menu li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.menubar .menu li a:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #fd3030;
+}
+
+#recent-posts .recent-post-item {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+#recent-posts .recent-post-item img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+#recent-posts .recent-post-item a {
+  color: #444;
+  text-decoration: none;
+}
+
+#recent-posts .recent-post-item a:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #fd3030;
+}
+
+#recent-posts .recent-post-item time {
+  color: #555;
+  font-size: .9rem;
+}
+
+#recent-posts .recent-post-item .title {
+  display: block;
+  margin: 10px 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+#recent-posts .recent-post-item .sub {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#recent-posts .recent-post-item .sub i {
+  color: #000;
+}
+
+#recent-posts .recent-post-item .sub a {
+  color: #555;
+}
+
+#recent-posts .recent-post-item .sub a:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #fd3030;
+}
+
+#recent-posts .recent-post-item .sub span {
+  color: #555;
+}
+
+#recent-posts .recent-post-item .categories {
+  margin-right: 10px;
+}
+
+#recent-posts .recent-post-item .excerpt a {
+  display: inline-block;
+  color: #fd3030;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+#recent-posts .recent-post-item .excerpt a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  background-color: red;
+}
+
+#recent-posts .recent-post-item .excerpt a:hover {
+  color: red;
+}
+
+#recent-posts .recent-post-item .excerpt a:hover::after {
+  width: 100%;
+}
+
+#paginator .page-number, #paginator .extend {
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  margin: 40px 5px;
+  display: inline-block;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  border-radius: 50%;
+  -webkit-transition: background-color ease 0.3s;
+  transition: background-color ease 0.3s;
+}
+
+#paginator .page-number:hover, #paginator .extend:hover {
+  background-color: #ebebeb;
+}
+
+#paginator .current {
+  color: #ffffff;
+  background-color: #fd3030;
+}
+
+#paginator .current:hover {
+  background-color: #ff3b3b;
+}
+
+#paginator .extend:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #fd3030;
+}
+
+#paginator .extend:hover {
+  background: none;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 20px;
+  font-size: .9rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+footer span {
+  color: orange;
+}
+
+footer a {
+  display: inline-block;
+  color: #fd3030;
+  text-decoration: none;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+}
+
+footer a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  -webkit-transition: all ease 0.3s;
+  transition: all ease 0.3s;
+  background-color: red;
+}
+
+footer a:hover {
+  color: red;
+}
+
+footer a:hover::after {
+  width: 100%;
+}
+/*# sourceMappingURL=riana.css.map */

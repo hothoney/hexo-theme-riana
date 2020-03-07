@@ -1,0 +1,16 @@
+<% var avatar = theme.avatar %>
+<div class="header">
+  <div class="avatar">
+    <a href="<%= url_for('/') %>">
+      <img src="<%=avatar%>">
+    </a>
+  </div>
+  <div class="social">
+    <% theme.socials.forEach(social => { %>
+    <% if(social.link) {%>
+    <a href="<%= social.link %>">
+      <i class="fab fa-<%= social.name %>"></i>
+    </a>
+    <% }}); %>
+  </div>
+</div>

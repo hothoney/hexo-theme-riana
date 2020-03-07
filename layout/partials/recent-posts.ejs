@@ -1,0 +1,41 @@
+<% if (page.posts.length > 0) { %>
+<div id="recent-posts">
+  <% page.posts.sort('date', -1).limit(10).each(post => { %>
+  <div class="recent-post-item">
+
+    <% if(post.img){ %>
+    <a href="<%=url_for(post.path)%>">
+      <img src="<%= post.img %> ">
+    </a>
+    <% } %>
+
+    <a href="<%=url_for(post.path)%>" class="title">
+      <%=post.title%>
+    </a>
+    <div class="sub">
+
+      <% if(post.categories.length > 0) {%>
+      <div class="categories">
+        <i class="fas fa-align-left"></i>
+        <% post.categories.forEach(category => { %>
+        <a href="<%= url_for(category.path) %>"><%= category.name %></a>
+        <% });%>
+      </div>
+      <% }else { %>
+      <div class="categories">
+        <i class="fas fa-align-left"></i>
+        <span>未分类</span>
+      </div>
+      <% } %>
+      <time datetime="<%=post.date.toJSON()%>">
+        <i class="far fa-clock"></i>
+        <%=date(post.date)%>
+      </time>
+    </div>
+
+    <% if(post.excerpt.length > 0) %>
+    <span class="excerpt"><%- post.excerpt %></span>
+  </div>
+  <% }); %>
+</div>
+<% } %>
