@@ -11,6 +11,7 @@ menu:
 # stylesheets loaded in the <head>
 stylesheets:
   - /css/riana.css
+  - /css/post.css
 
 # scripts loaded in the end of the body
 scripts:
@@ -35,3 +36,5 @@ socials:
     link: '#'
   - name: telegram
     link: '#'
+  - name: facebook
+    link: 

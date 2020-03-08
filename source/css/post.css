@@ -1,0 +1,272 @@
+@charset "UTF-8";
+#excerpt, #post {
+  /*code {font-size:90%;}*/
+  /*pre {text-align:left; overflow-x: scroll; color: #257fa0; background: #f6f6f6; padding: 10pt 15pt; border-radius: 3px; border: solid 1px #e2e2e2;}*/
+}
+
+#excerpt h1, #post h1 {
+  font-size: 2.2em;
+  font-weight: 700;
+  line-height: 1.1;
+  padding-top: 16px;
+  margin-bottom: 20px;
+}
+
+#excerpt h2, #excerpt h3, #excerpt h4, #excerpt h5, #excerpt h6, #post h2, #post h3, #post h4, #post h5, #post h6 {
+  line-height: 1.5em;
+}
+
+#excerpt h2, #post h2 {
+  font-size: 1.4em;
+  margin: 15px 10px 0px 0;
+  padding-left: 9px;
+  border-left: 6px solid #ff7e79;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+#excerpt h3, #post h3 {
+  font-weight: 700;
+  font-size: 1.2em;
+  line-height: 1.4;
+  margin: 10px 0 5px;
+  padding-top: 10px;
+}
+
+#excerpt h4, #post h4 {
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  line-height: 1.4;
+  margin: 10px 0 5px;
+  padding-top: 10px;
+}
+
+#excerpt h5, #excerpt h6, #post h5, #post h6 {
+  font-size: .9em;
+}
+
+#excerpt h5, #post h5 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#excerpt h6, #post h6 {
+  font-weight: normal;
+  color: #AAA;
+}
+
+#excerpt img, #post img {
+  width: 100%;
+  border-radius: 5px;
+  display: block;
+  margin-bottom: 15px;
+  height: auto;
+}
+
+#excerpt dl, #excerpt ol, #excerpt ul, #post dl, #post ol, #post ul {
+  margin-top: 12px;
+  margin-bottom: 20px;
+  padding-left: 5%;
+  line-height: 1.8;
+}
+
+#excerpt p, #post p {
+  padding: 0;
+  line-height: 1.8;
+}
+
+#excerpt a, #post a {
+  color: #f22f27;
+  text-decoration: none;
+}
+
+#excerpt a:hover, #post a:hover {
+  color: #f55852;
+}
+
+#excerpt a:focus, #post a:focus {
+  outline-offset: -2px;
+}
+
+#excerpt blockquote, #post blockquote {
+  font-size: 1em;
+  font-style: normal;
+  padding: 30px 38px;
+  position: relative;
+  line-height: 1.8;
+  text-indent: 0;
+  border: none;
+  color: #888;
+}
+
+#excerpt blockquote:before, #post blockquote:before {
+  content: "“";
+  left: 12px;
+  top: 0;
+  color: #E0E0E0;
+  font-size: 4em;
+  font-family: Arial, serif;
+  line-height: 1em;
+  font-weight: 700;
+  position: absolute;
+}
+
+#excerpt blockquote:after, #post blockquote:after {
+  content: "”";
+  right: 12px;
+  bottom: -26px;
+  color: #E0E0E0;
+  font-size: 4em;
+  font-family: Arial, serif;
+  line-height: 1em;
+  font-weight: 700;
+  position: absolute;
+  bottom: -31px;
+}
+
+#excerpt strong, #excerpt dfn, #post strong, #post dfn {
+  font-weight: 700;
+}
+
+#excerpt em, #excerpt dfn, #post em, #post dfn {
+  font-style: italic;
+  font-weight: 400;
+}
+
+#excerpt del, #post del {
+  text-decoration: line-through;
+}
+
+#excerpt pre, #post pre {
+  font-size: 13px;
+  line-height: 1.42857;
+  word-break: break-all;
+  word-wrap: break-word;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  display: block;
+  background: #f8f8f8;
+  padding: 10px 20px;
+  border: none;
+  color: #666;
+  font-family: Courier, sans-serif;
+}
+
+#excerpt code, #post code {
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+  font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+  padding: 2px 4px;
+  font-size: 90%;
+}
+
+#excerpt p > code, #post p > code {
+  color: #c7264e;
+  background-color: #f9f2f4;
+  font-size: .95em;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+#excerpt figure, #post figure {
+  margin: 1em 0;
+}
+
+#excerpt figcaption, #post figcaption {
+  font-size: 0.75em;
+  padding: 0.5em 2em;
+}
+
+#excerpt figure img, #post figure img {
+  margin-bottom: 0px;
+}
+
+#excerpt hr, #post hr {
+  margin-top: 20px;
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
+#excerpt ol p, #excerpt ul p, #post ol p, #post ul p {
+  margin-bottom: 0px;
+}
+
+#excerpt ol#footnotes, #post ol#footnotes {
+  font-size: 0.95em;
+  padding-top: 1em;
+  margin-left: 0;
+  border-top: 1px solid #eaeaea;
+  counter-reset: footer-counter;
+  list-style: none;
+  color: #555;
+  padding-left: 5%;
+  margin: 20px 0;
+}
+
+#excerpt ol#footnotes li, #post ol#footnotes li {
+  margin-left: 16px;
+  font-weight: 400;
+  line-height: 2;
+  list-style-type: none;
+}
+
+#excerpt ol#footnotes li:before, #post ol#footnotes li:before {
+  content: counter(footer-counter) ". ";
+  counter-increment: footer-counter;
+  font-weight: 800;
+  font-size: .95em;
+}
+
+@keyframes highfade {
+  0% {
+    background-color: none;
+  }
+  20% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: none;
+  }
+}
+
+@-webkit-keyframes highfade {
+  0% {
+    background-color: none;
+  }
+  20% {
+    background-color: yellow;
+  }
+  100% {
+    background-color: none;
+  }
+}
+
+#excerpt a:target, #excerpt ol#footnotes li:target, #excerpt sup a:target, #post a:target, #post ol#footnotes li:target, #post sup a:target {
+  animation-name: highfade;
+  animation-duration: 2s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-name: highfade;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-iteration-count: 1;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+#excerpt a:target, #post a:target {
+  border: 0;
+  outline: 0;
+}
+
+#excerpt a:target, #post a:target {
+  border: 0;
+  outline: 0;
+}
+
+#excerpt a:target, #post a:target {
+  border: 0;
+  outline: 0;
+}
+/*# sourceMappingURL=post.css.map */

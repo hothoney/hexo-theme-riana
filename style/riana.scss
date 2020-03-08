@@ -1,3 +1,4 @@
+@import 'mixin.scss';
 // 全局样式
 *{
   margin: 0;
@@ -5,14 +6,9 @@
   box-sizing: border-box;
 }
 body{
+  font-family: BlinkMacSystemFont,-apple-system,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;;
   overflow-x: hidden;
-}
-// mixin
-@mixin hover-color{
-  &:hover{
-    transition: color ease 0.3s;
-    color: rgb(253, 48, 48)
-  }
+  transition: transform ease-out 0.3s;
 }
 // layout样式
 .container{
@@ -38,6 +34,7 @@ body{
     }
   }
   .social{
+    margin: 5px 0 10px;
     a{
       font-size: 1.1rem;
       color: #000;
@@ -50,14 +47,35 @@ body{
 }
 // 菜单栏样式
 .menubar{
-  height: 72px;
+  height: 64px;
   display: flex;
   background-color: #fff;
   top: 0;
   position: sticky;
   justify-content: space-around;
   align-items: center;
-  box-shadow: 0 3px 4px rgba(#000,0.1);
+  box-shadow: 0 1px 2px rgba(#999,0.1);
+  z-index: 9999;
+
+  #bar{
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+  }
+
+  .back{
+    transition: all ease-out 0.5s;
+    transform: translateX(100%);
+  }
+
+  &::before{
+    content: '';
+    position: absolute;
+    height: 1px;
+    width: 50%;
+    top: 0;
+    background-image: linear-gradient(to right,rgba(#000,0.0),rgba(#999,0.1),rgba(#000,0.0),);
+  }
 
   .title{
     text-decoration: none;
@@ -119,16 +137,21 @@ body{
     }
     .categories{
       margin-right: 10px;
-    }
-    .excerpt{
       a{
-        display: inline-block;
+        text-decoration: underline dashed;
+      }
+    }
+    #excerpt{
+      a{
         color:rgb(253, 48, 48);
         transition: all ease 0.3s;
+        position: relative;
 
         &::after{
           content: '';
-          display: block;
+          position: absolute;
+          left: 0;
+          bottom: 0;
           width: 0;
           height: 1px;
           transition: all ease 0.3s;
@@ -181,12 +204,15 @@ body{
 }
 // 页脚样式
 footer{
+  // height: 90px;
   display: flex;
-  margin-bottom: 20px;
-  font-size: .9rem;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
+  margin-top: 20px;
+  padding: 35px 0;
+  border-top: 1px solid rgba(136, 136, 136, 0.459);
+  // font-size: .9rem;
 
   span{
     color: orange;
@@ -211,6 +237,61 @@ footer{
       color: red;
       &::after{
         width: 100%;
+      }
+    }
+  }
+}
+
+// 响应式
+@media screen and (max-width: 800px){
+  .body-move{
+    transform: translate(-10%);
+  }
+
+  .container{
+    width: 90%;
+  }
+  .menubar{
+    margin: 0 auto;
+    position: relative;
+    justify-content: space-between;
+
+    h2,i{
+      margin: 0 40px;
+    }
+
+    .back{
+      position: fixed;
+      background-color: rgba(#fff,0.5);
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 5;
+    }
+
+    #bar{
+      display: block;
+    }
+
+    .menu{
+      // display: none;
+      z-index: 10;
+      width: 70%;
+      max-width: 400px;
+      height: 100%;
+      position: fixed;
+      right: -70%;
+      top: 0;
+      padding-top: 20px;
+      flex-direction: column;
+      background-color: #fff;
+      border-left: #eee solid 1px;
+      transition: all ease-out 0.3s;
+      // transform: translateX(100%);
+
+      li{
+        padding: 10px 20px;
       }
     }
   }

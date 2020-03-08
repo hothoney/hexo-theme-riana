@@ -1,0 +1,20 @@
+@import 'mixin.scss';
+h4{
+  font-size: 1.5rem;
+  margin-top: 20px;
+}
+.articles{
+  margin-left: 20px;
+  list-style: none;
+  border-left: 2px dashed #999;
+  position: relative;
+  li{
+    padding: 5px 10px;
+    a{
+      @include hover-color;
+      color: #666;
+      font-size: .9rem;
+      text-decoration: none;
+    }
+  }
+}

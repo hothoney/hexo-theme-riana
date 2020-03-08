@@ -2,9 +2,13 @@
   <a href="<%= url_for('/') %>" class="title">
     <h2><%= config.title %></h2>
   </a>
-  <ul class="menu">
-    <% Object.keys(theme.menu).forEach( key => {%>
-    <li><a href="<%= theme.menu[key] %>"><%= key %></a></li>
-    <% }) %>
-  </ul>
+  <div class="menu-container">
+    <i class="fas fa-bars" id="bar"></i>
+    <div class="back"></div>
+    <ul class="menu">
+      <% Object.keys(theme.menu).forEach( key => {%>
+      <li><a href="<%= theme.menu[key] %>"><%= key %></a></li>
+      <% }) %>
+    </ul>
+  </div>
 </div>

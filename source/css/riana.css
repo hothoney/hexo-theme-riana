@@ -6,7 +6,12 @@
 }
 
 body {
+  font-family: BlinkMacSystemFont,-apple-system,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
   overflow-x: hidden;
+  -webkit-transition: -webkit-transform ease-out 0.3s;
+  transition: -webkit-transform ease-out 0.3s;
+  transition: transform ease-out 0.3s;
+  transition: transform ease-out 0.3s, -webkit-transform ease-out 0.3s;
 }
 
 .container {
@@ -42,6 +47,10 @@ body {
   border-radius: 50%;
 }
 
+.header .social {
+  margin: 5px 0 10px;
+}
+
 .header .social a {
   font-size: 1.1rem;
   color: #000;
@@ -56,7 +65,7 @@ body {
 }
 
 .menubar {
-  height: 72px;
+  height: 64px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -69,8 +78,32 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 3px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 1px 2px rgba(153, 153, 153, 0.1);
+          box-shadow: 0 1px 2px rgba(153, 153, 153, 0.1);
+  z-index: 9999;
+}
+
+.menubar #bar {
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: none;
+}
+
+.menubar .back {
+  -webkit-transition: all ease-out 0.5s;
+  transition: all ease-out 0.5s;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.menubar::before {
+  content: '';
+  position: absolute;
+  height: 1px;
+  width: 50%;
+  top: 0;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(153, 153, 153, 0.1)), to(rgba(0, 0, 0, 0)));
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(153, 153, 153, 0.1), rgba(0, 0, 0, 0));
 }
 
 .menubar .title {
@@ -162,16 +195,23 @@ body {
   margin-right: 10px;
 }
 
-#recent-posts .recent-post-item .excerpt a {
-  display: inline-block;
+#recent-posts .recent-post-item .categories a {
+  -webkit-text-decoration: underline dashed;
+          text-decoration: underline dashed;
+}
+
+#recent-posts .recent-post-item #excerpt a {
   color: #fd3030;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
+  position: relative;
 }
 
-#recent-posts .recent-post-item .excerpt a::after {
+#recent-posts .recent-post-item #excerpt a::after {
   content: '';
-  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
   width: 0;
   height: 1px;
   -webkit-transition: all ease 0.3s;
@@ -179,11 +219,11 @@ body {
   background-color: red;
 }
 
-#recent-posts .recent-post-item .excerpt a:hover {
+#recent-posts .recent-post-item #excerpt a:hover {
   color: red;
 }
 
-#recent-posts .recent-post-item .excerpt a:hover::after {
+#recent-posts .recent-post-item #excerpt a:hover::after {
   width: 100%;
 }
 
@@ -228,8 +268,6 @@ footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-bottom: 20px;
-  font-size: .9rem;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -240,6 +278,9 @@ footer {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  margin-top: 20px;
+  padding: 35px 0;
+  border-top: 1px solid rgba(136, 136, 136, 0.459);
 }
 
 footer span {
@@ -270,5 +311,58 @@ footer a:hover {
 
 footer a:hover::after {
   width: 100%;
+}
+
+@media screen and (max-width: 800px) {
+  .body-move {
+    -webkit-transform: translate(-10%);
+            transform: translate(-10%);
+  }
+  .container {
+    width: 90%;
+  }
+  .menubar {
+    margin: 0 auto;
+    position: relative;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .menubar h2, .menubar i {
+    margin: 0 40px;
+  }
+  .menubar .back {
+    position: fixed;
+    background-color: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 5;
+  }
+  .menubar #bar {
+    display: block;
+  }
+  .menubar .menu {
+    z-index: 10;
+    width: 70%;
+    max-width: 400px;
+    height: 100%;
+    position: fixed;
+    right: -70%;
+    top: 0;
+    padding-top: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    background-color: #fff;
+    border-left: #eee solid 1px;
+    -webkit-transition: all ease-out 0.3s;
+    transition: all ease-out 0.3s;
+  }
+  .menubar .menu li {
+    padding: 10px 20px;
+  }
 }
 /*# sourceMappingURL=riana.css.map */
