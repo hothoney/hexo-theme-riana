@@ -7,12 +7,12 @@ barBtn.addEventListener('click', () => {
   // menu.style.display = 'block'
   menu.style.transform = 'translateX(-100%)'
   body.classList.add('body-move')
-  menuBack.style.transform = 'translateX(0)'
+  menuBack.style.transform = 'translateX(-100%)'
 })
 menuBack.addEventListener('click', () => {
   menu.style.transform = 'translateX(0)'
   body.classList.remove('body-move')
-  menuBack.style.transform = 'translateX(100%)'
+  menuBack.style.transform = 'translateX(0%)'
 })
 // setInterval(() => {
 //   if (!screen_width) {

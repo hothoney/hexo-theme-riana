@@ -1,9 +1,26 @@
-
 <article id="post">
   <h1><%=page.title%></h1>
+  <div class="sub">
+    <% if(page.categories.length > 0) {%>
+    <div class="categories">
+      <i class="fas fa-align-left"></i>
+      <% page.categories.forEach(category => { %>
+      <a href="<%= url_for(category.path) %>"><%= category.name %></a>
+      <% });%>
+    </div>
+    <% }else { %>
+    <div class="categories">
+      <i class="fas fa-align-left"></i>
+      <span>未分类</span>
+    </div>
+    <% } %>
+    <time datetime="<%=page.date.toJSON()%>">
+      <i class="far fa-clock"></i>
+      <%=date(page.date)%>
+    </time>
+  </div>
+
   <%-page.content%>
 </article>
 
-<div id="paginator">
-  <%-paginator()%>
-</div>
+<%- partial('partials/paginator') %>
