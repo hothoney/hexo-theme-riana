@@ -1,4 +1,9 @@
 <footer>
+  <% if(is_home() || is_post()){ %>
+  <link rel="stylesheet" href="/css/dracula.css">
+  <script src="/js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <% } %>
   <p>©2020</p>
   <p>Theme <span>Riana</span> by <a href="https://hoon.cc/">Hoon</a></p>
 </footer>

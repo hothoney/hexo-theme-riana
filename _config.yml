@@ -5,13 +5,14 @@ language: en
 menu:
   Home: /
   Archives: /archives
-  Contact: /contact
-  About: /about
+  # Contact: /contact
+  # About: /about
 
 # stylesheets loaded in the <head>
 stylesheets:
   - /css/riana.css
   - /css/post.css
+  # - /css/dark.css
 
 # scripts loaded in the end of the body
 scripts:
@@ -19,7 +20,8 @@ scripts:
 
 
 # 在知道自己在干什么的情况下才能修改
-
+highlight:
+  enable: false
 
 # 自定义内容
 

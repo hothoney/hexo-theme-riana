@@ -18,7 +18,7 @@
 
 #excerpt h2, #post h2 {
   font-size: 1.4em;
-  margin: 15px 10px 0px 0;
+  margin: 20px 10px 10px 0;
   padding-left: 9px;
   border-left: 6px solid #ff7e79;
   font-weight: 700;
@@ -38,7 +38,6 @@
   text-transform: uppercase;
   font-size: 1.1em;
   line-height: 1.4;
-  margin: 10px 0 5px;
   padding-top: 10px;
 }
 
@@ -66,18 +65,18 @@
 
 #excerpt dl, #excerpt ol, #excerpt ul, #post dl, #post ol, #post ul {
   margin-top: 12px;
-  margin-bottom: 20px;
   padding-left: 5%;
   line-height: 1.8;
 }
 
 #excerpt p, #post p {
+  margin: 0 0 10px;
   padding: 0;
   line-height: 1.8;
 }
 
 #excerpt a, #post a {
-  color: #f22f27;
+  color: #ff736e;
   text-decoration: none;
 }
 
@@ -139,14 +138,14 @@
 }
 
 #excerpt pre, #post pre {
-  font-size: 13px;
+  font-size: 1rem;
   line-height: 1.42857;
   word-break: break-all;
   word-wrap: break-word;
   border-radius: 4px;
   white-space: pre-wrap;
   display: block;
-  background: #f8f8f8;
+  background: #282a36;
   padding: 10px 20px;
   border: none;
   color: #666;
@@ -154,8 +153,6 @@
 }
 
 #excerpt code, #post code {
-  color: #c7254e;
-  background-color: #f9f2f4;
   border-radius: 4px;
   font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
   padding: 2px 4px;
@@ -163,8 +160,8 @@
 }
 
 #excerpt p > code, #post p > code {
-  color: #c7264e;
-  background-color: #f9f2f4;
+  color: #ddd;
+  background-color: #282a36;
   font-size: .95em;
   border-radius: 3px;
   -moz-border-radius: 3px;

@@ -8,6 +8,7 @@
 
 body {
   font-family: BlinkMacSystemFont,-apple-system,Roboto,Helvetica Neue,Helvetica,Arial,sans-serif;
+  width: 100vw;
   overflow-x: hidden;
   -webkit-transition: -webkit-transform ease-out 0.3s;
   transition: -webkit-transform ease-out 0.3s;
@@ -84,6 +85,21 @@ body {
   z-index: 9999;
 }
 
+.menubar .menu-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.menubar .menu-container .theme-icon {
+  margin-right: 20px;
+  cursor: pointer;
+  height: 25px;
+}
+
 .menubar #bar {
   font-size: 1.2rem;
   cursor: pointer;
@@ -103,6 +119,7 @@ body {
   height: 1px;
   width: 50%;
   top: 0;
+  left: 25%;
   background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), color-stop(rgba(153, 153, 153, 0.1)), to(rgba(0, 0, 0, 0)));
   background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(153, 153, 153, 0.1), rgba(0, 0, 0, 0));
 }
@@ -173,8 +190,8 @@ body {
 }
 
 #recent-posts .recent-post-item .title:hover::after, #recent-posts .category-item .title:hover::after, #recent-posts .tag-item .title:hover::after, #category .recent-post-item .title:hover::after, #category .category-item .title:hover::after, #category .tag-item .title:hover::after, #tag .recent-post-item .title:hover::after, #tag .category-item .title:hover::after, #tag .tag-item .title:hover::after {
-  background-image: -webkit-gradient(linear, left top, right top, from(#ff0000), to(#fff));
-  background-image: linear-gradient(to right, #ff0000, #fff);
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff0000), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, #ff0000, rgba(255, 255, 255, 0));
 }
 
 #recent-posts .recent-post-item .title::before, #recent-posts .category-item .title::before, #recent-posts .tag-item .title::before, #category .recent-post-item .title::before, #category .category-item .title::before, #category .tag-item .title::before, #tag .recent-post-item .title::before, #tag .category-item .title::before, #tag .tag-item .title::before {
@@ -236,7 +253,7 @@ body {
 }
 
 #recent-posts .recent-post-item #excerpt a, #recent-posts .category-item #excerpt a, #recent-posts .tag-item #excerpt a, #category .recent-post-item #excerpt a, #category .category-item #excerpt a, #category .tag-item #excerpt a, #tag .recent-post-item #excerpt a, #tag .category-item #excerpt a, #tag .tag-item #excerpt a {
-  color: #fd3030;
+  color: #ff7373;
   -webkit-transition: all ease 0.3s;
   transition: all ease 0.3s;
   position: relative;
@@ -379,8 +396,11 @@ footer a:hover::after {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .menubar h2, .menubar i {
-    margin: 0 40px;
+  .menubar h2 {
+    margin-left: 40px;
+  }
+  .menubar i {
+    margin-right: 40px;
   }
   .menubar .back {
     position: fixed;
