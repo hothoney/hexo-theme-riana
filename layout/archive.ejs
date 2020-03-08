@@ -15,7 +15,13 @@
   <ul class="articles">
     <% for (let post of groups[year].sort((a, b) => b.date.diff(a.date))) { %>
     <li class="article>">
-      <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished"></time>
+      <time datetime="<%= date_xml(post.date) %>" itemprop="datePublished">
+        <%if(post.date.date() < 10) { %>
+        <%= post.date.month() + 1 %>月<%= '0' + post.date.date() %>日
+        <% } else { %>
+        <%= post.date.month() + 1 %>月<%= post.date.date() %>日
+        <% } %>
+      </time>
       <a href="<%= url_for(post.link ? post.link : post.path) %>">
         <%= post.title %>
       </a>
@@ -24,3 +30,4 @@
   </ul>
   <% } %>
 </section>
+<%- partial('partials/paginator') %>

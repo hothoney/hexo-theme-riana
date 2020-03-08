@@ -109,7 +109,7 @@ body{
     a{
       color: #444;
       text-decoration: none;
-      @include hover-color;
+      // @include hover-color;
     }
     time{
       color: #555;
@@ -118,12 +118,44 @@ body{
     .title{
       display: block;
       margin: 10px 0;
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: bold;
+      position: relative;
+      margin-bottom: 30px;
+
+      &:hover::before{
+        background-color: red;
+      }
+      &:hover::after{
+        background-image: linear-gradient(to right,#ff0000,#fff);
+      }
+
+      &::before{
+        content: '';
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #444;
+        position: absolute;
+        left: 0;
+        bottom: -17px;
+        // transition: all ease 0.3s;
+      }
+      &::after{
+        content: '';
+        width: 100px;
+        height: 1px;
+        background-image: linear-gradient(to right, #444, rgba(#fff,0));
+        position: absolute;
+        left: 4px;
+        bottom: -14px;
+        // transition: all ease 0.3s;
+      }
     }
     .sub{
       margin: 10px 0;
       display: flex;
+      font-size: .8rem;
       i{
         color: #000;
       }
@@ -138,7 +170,7 @@ body{
     .categories{
       margin-right: 10px;
       a{
-        text-decoration: underline dashed;
+        text-decoration: #999 underline dashed;
       }
     }
     #excerpt{
@@ -253,7 +285,7 @@ footer{
   }
   .menubar{
     margin: 0 auto;
-    position: relative;
+    // position: relative;
     justify-content: space-between;
 
     h2,i{

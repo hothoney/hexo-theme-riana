@@ -148,12 +148,6 @@ body {
   text-decoration: none;
 }
 
-#recent-posts .recent-post-item a:hover {
-  -webkit-transition: color ease 0.3s;
-  transition: color ease 0.3s;
-  color: #fd3030;
-}
-
 #recent-posts .recent-post-item time {
   color: #555;
   font-size: .9rem;
@@ -162,8 +156,41 @@ body {
 #recent-posts .recent-post-item .title {
   display: block;
   margin: 10px 0;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: bold;
+  position: relative;
+  margin-bottom: 30px;
+}
+
+#recent-posts .recent-post-item .title:hover::before {
+  background-color: red;
+}
+
+#recent-posts .recent-post-item .title:hover::after {
+  background-image: -webkit-gradient(linear, left top, right top, from(#ff0000), to(#fff));
+  background-image: linear-gradient(to right, #ff0000, #fff);
+}
+
+#recent-posts .recent-post-item .title::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #444;
+  position: absolute;
+  left: 0;
+  bottom: -17px;
+}
+
+#recent-posts .recent-post-item .title::after {
+  content: '';
+  width: 100px;
+  height: 1px;
+  background-image: -webkit-gradient(linear, left top, right top, from(#444), to(rgba(255, 255, 255, 0)));
+  background-image: linear-gradient(to right, #444, rgba(255, 255, 255, 0));
+  position: absolute;
+  left: 4px;
+  bottom: -14px;
 }
 
 #recent-posts .recent-post-item .sub {
@@ -171,6 +198,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  font-size: .8rem;
 }
 
 #recent-posts .recent-post-item .sub i {
@@ -196,8 +224,8 @@ body {
 }
 
 #recent-posts .recent-post-item .categories a {
-  -webkit-text-decoration: underline dashed;
-          text-decoration: underline dashed;
+  -webkit-text-decoration: #999 underline dashed;
+          text-decoration: #999 underline dashed;
 }
 
 #recent-posts .recent-post-item #excerpt a {
@@ -323,7 +351,6 @@ footer a:hover::after {
   }
   .menubar {
     margin: 0 auto;
-    position: relative;
     -webkit-box-pack: justify;
         -ms-flex-pack: justify;
             justify-content: space-between;
