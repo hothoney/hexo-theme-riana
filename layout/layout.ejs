@@ -16,7 +16,6 @@ pageTitle +=  config.title;
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%=pageTitle%></title>
-
   <link href="https://cdn.bootcss.com/font-awesome/5.12.1/css/all.css" rel="stylesheet">
   <% if (theme.stylesheets !== undefined && theme.stylesheets.length > 0) { %>
   <!-- stylesheets list from _config.yml -->
@@ -28,7 +27,9 @@ pageTitle +=  config.title;
 
 <body class="theme">
   <script src="/js/darkmode.js"></script>
+  <% if(theme.enableHeader) {%>
   <%- partial('partials/header') %>
+  <% } %>
   <%- partial('partials/menubar') %>
   <div class="container">
     <%- body %>

@@ -90,7 +90,7 @@
     white-space: pre-wrap;
     display: block;
     background: #282a36;
-    padding: 10px 20px;
+    padding: 10px;
     border: none;
     color: #666;
     font-family: Courier, sans-serif;
@@ -110,6 +110,7 @@
     border-radius: 3px;
   }
   figure {
+    border-radius: 5px;
     margin: 1rem 0;
   }
   figcaption {
@@ -118,6 +119,30 @@
   }
   figure img {
     margin-bottom: 0px;
+  }
+  figure{
+    table{
+      width: 100%;
+    }
+    td{
+      padding: 0.4rem;
+      &:first-child{
+        width: 5%;
+        text-align: center;
+        border-radius: 5px 0 0 5px;
+        padding-left: 0.5rem;
+        span{
+          color: #ccc;
+        }
+      }
+      &:nth-child(2){
+        border-radius: 0 5px 5px 0;
+      }
+      pre{
+        margin: 0;
+        padding: 0.2rem 0;
+      }
+    }
   }
   hr {
     margin: 20px 0;
@@ -134,20 +159,17 @@
     border-collapse: collapse;
     color: #ddd;
     border-style: hidden;
-    border-radius: 10px;
   }
   th,
   td {
     padding: 0.4rem 1rem;
-    border: rgb(26, 26, 26) solid 1px;
   }
   th {
-    background-color: #282a36;
+    background-color: #1c1d25;
   }
   td {
-    background-color: #333544;
+    background-color: #282a36;
   }
-
   .sub {
     margin: 20px 0;
     display: flex;
