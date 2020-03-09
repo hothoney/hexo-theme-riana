@@ -475,6 +475,7 @@
 .theme.dark-mode #excerpt h5,
 .theme.dark-mode #excerpt h6,
 .theme.dark-mode #excerpt li,
+.theme.dark-mode #excerpt .sub span,
 .theme.dark-mode #post p,
 .theme.dark-mode #post h1,
 .theme.dark-mode #post h2,
@@ -482,7 +483,8 @@
 .theme.dark-mode #post h4,
 .theme.dark-mode #post h5,
 .theme.dark-mode #post h6,
-.theme.dark-mode #post li {
+.theme.dark-mode #post li,
+.theme.dark-mode #post .sub span {
   color: #aaa;
 }
 
