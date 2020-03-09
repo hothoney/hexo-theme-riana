@@ -727,8 +727,8 @@ body.theme #tag .recent-post-item,
 body.theme #tag .category-item,
 body.theme #tag .tag-item {
   width: 100%;
-  margin-bottom: 30px;
-  border-radius: 10px;
+  padding: 30px 0;
+  border-bottom: 1px solid #aaa;
 }
 
 body.theme #recent-posts .recent-post-item img,
@@ -770,57 +770,56 @@ body.theme #tag .tag-item time {
   font-size: 0.9rem;
 }
 
-body.theme #recent-posts .recent-post-item .title,
-body.theme #recent-posts .category-item .title,
-body.theme #recent-posts .tag-item .title,
-body.theme #category .recent-post-item .title,
-body.theme #category .category-item .title,
-body.theme #category .tag-item .title,
-body.theme #tag .recent-post-item .title,
-body.theme #tag .category-item .title,
-body.theme #tag .tag-item .title {
+body.theme #recent-posts .recent-post-item .post-title,
+body.theme #recent-posts .category-item .post-title,
+body.theme #recent-posts .tag-item .post-title,
+body.theme #category .recent-post-item .post-title,
+body.theme #category .category-item .post-title,
+body.theme #category .tag-item .post-title,
+body.theme #tag .recent-post-item .post-title,
+body.theme #tag .category-item .post-title,
+body.theme #tag .tag-item .post-title {
   display: block;
-  margin: 10px 0;
   font-size: 1.4rem;
   font-weight: bold;
   position: relative;
   margin-bottom: 30px;
 }
 
-body.theme #recent-posts .recent-post-item .title:hover::before,
-body.theme #recent-posts .category-item .title:hover::before,
-body.theme #recent-posts .tag-item .title:hover::before,
-body.theme #category .recent-post-item .title:hover::before,
-body.theme #category .category-item .title:hover::before,
-body.theme #category .tag-item .title:hover::before,
-body.theme #tag .recent-post-item .title:hover::before,
-body.theme #tag .category-item .title:hover::before,
-body.theme #tag .tag-item .title:hover::before {
+body.theme #recent-posts .recent-post-item .post-title:hover::before,
+body.theme #recent-posts .category-item .post-title:hover::before,
+body.theme #recent-posts .tag-item .post-title:hover::before,
+body.theme #category .recent-post-item .post-title:hover::before,
+body.theme #category .category-item .post-title:hover::before,
+body.theme #category .tag-item .post-title:hover::before,
+body.theme #tag .recent-post-item .post-title:hover::before,
+body.theme #tag .category-item .post-title:hover::before,
+body.theme #tag .tag-item .post-title:hover::before {
   background-color: #ff3232;
 }
 
-body.theme #recent-posts .recent-post-item .title:hover::after,
-body.theme #recent-posts .category-item .title:hover::after,
-body.theme #recent-posts .tag-item .title:hover::after,
-body.theme #category .recent-post-item .title:hover::after,
-body.theme #category .category-item .title:hover::after,
-body.theme #category .tag-item .title:hover::after,
-body.theme #tag .recent-post-item .title:hover::after,
-body.theme #tag .category-item .title:hover::after,
-body.theme #tag .tag-item .title:hover::after {
+body.theme #recent-posts .recent-post-item .post-title:hover::after,
+body.theme #recent-posts .category-item .post-title:hover::after,
+body.theme #recent-posts .tag-item .post-title:hover::after,
+body.theme #category .recent-post-item .post-title:hover::after,
+body.theme #category .category-item .post-title:hover::after,
+body.theme #category .tag-item .post-title:hover::after,
+body.theme #tag .recent-post-item .post-title:hover::after,
+body.theme #tag .category-item .post-title:hover::after,
+body.theme #tag .tag-item .post-title:hover::after {
   background-image: -webkit-gradient(linear, left top, right top, from(#ff3232), to(rgba(255, 255, 255, 0)));
   background-image: linear-gradient(to right, #ff3232, rgba(255, 255, 255, 0));
 }
 
-body.theme #recent-posts .recent-post-item .title::before,
-body.theme #recent-posts .category-item .title::before,
-body.theme #recent-posts .tag-item .title::before,
-body.theme #category .recent-post-item .title::before,
-body.theme #category .category-item .title::before,
-body.theme #category .tag-item .title::before,
-body.theme #tag .recent-post-item .title::before,
-body.theme #tag .category-item .title::before,
-body.theme #tag .tag-item .title::before {
+body.theme #recent-posts .recent-post-item .post-title::before,
+body.theme #recent-posts .category-item .post-title::before,
+body.theme #recent-posts .tag-item .post-title::before,
+body.theme #category .recent-post-item .post-title::before,
+body.theme #category .category-item .post-title::before,
+body.theme #category .tag-item .post-title::before,
+body.theme #tag .recent-post-item .post-title::before,
+body.theme #tag .category-item .post-title::before,
+body.theme #tag .tag-item .post-title::before {
   content: '';
   width: 7px;
   height: 7px;
@@ -831,15 +830,15 @@ body.theme #tag .tag-item .title::before {
   bottom: -17px;
 }
 
-body.theme #recent-posts .recent-post-item .title::after,
-body.theme #recent-posts .category-item .title::after,
-body.theme #recent-posts .tag-item .title::after,
-body.theme #category .recent-post-item .title::after,
-body.theme #category .category-item .title::after,
-body.theme #category .tag-item .title::after,
-body.theme #tag .recent-post-item .title::after,
-body.theme #tag .category-item .title::after,
-body.theme #tag .tag-item .title::after {
+body.theme #recent-posts .recent-post-item .post-title::after,
+body.theme #recent-posts .category-item .post-title::after,
+body.theme #recent-posts .tag-item .post-title::after,
+body.theme #category .recent-post-item .post-title::after,
+body.theme #category .category-item .post-title::after,
+body.theme #category .tag-item .post-title::after,
+body.theme #tag .recent-post-item .post-title::after,
+body.theme #tag .category-item .post-title::after,
+body.theme #tag .tag-item .post-title::after {
   content: '';
   width: 100px;
   height: 1px;
