@@ -21,13 +21,13 @@ themeSwitch.addEventListener('click', () => {
     enableDarkMode()
     localStorage.setItem("isLight", false);
     isLight = false
-    console.log(isLight)
+    // console.log(isLight)
   }
   else {
     disabledDarkMode()
     localStorage.setItem("isLight", true);
     isLight = true
-    console.log(isLight)
+    // console.log(isLight)
   }
 })
 function loadThemeIcon() {

@@ -1,7 +1,0 @@
-// mixin
-@mixin hover-color{
-  &:hover{
-    transition: color ease 0.3s;
-    color: rgb(253, 48, 48)
-  }
-}

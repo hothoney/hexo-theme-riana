@@ -1,0 +1,11 @@
+// Mixin
+@mixin hover-color {
+  &:hover {
+    transition: color ease 0.3s;
+    color: $primary;
+  }
+}
+
+@mixin transition {
+  transition: all ease 0.3s;
+}
