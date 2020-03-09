@@ -249,7 +249,7 @@ body {
 
 #recent-posts .recent-post-item #excerpt, #recent-posts .category-item #excerpt, #recent-posts .tag-item #excerpt, #category .recent-post-item #excerpt, #category .category-item #excerpt, #category .tag-item #excerpt, #tag .recent-post-item #excerpt, #tag .category-item #excerpt, #tag .tag-item #excerpt {
   margin: 0 auto;
-  padding: 20px;
+  padding: 5px 20px;
 }
 
 #recent-posts .recent-post-item #excerpt a, #recent-posts .category-item #excerpt a, #recent-posts .tag-item #excerpt a, #category .recent-post-item #excerpt a, #category .category-item #excerpt a, #category .tag-item #excerpt a, #tag .recent-post-item #excerpt a, #tag .category-item #excerpt a, #tag .tag-item #excerpt a {
