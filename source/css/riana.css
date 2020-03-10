@@ -473,9 +473,11 @@
   color: #ccc;
 }
 
-.theme.dark-mode #recent-posts .category-item .sub i,
+.theme.dark-mode #recent-posts .category-item .sub i, .theme.dark-mode #recent-posts .category-item .sub a,
 .theme.dark-mode #category .category-item .sub i,
-.theme.dark-mode #tag .category-item .sub i {
+.theme.dark-mode #category .category-item .sub a,
+.theme.dark-mode #tag .category-item .sub i,
+.theme.dark-mode #tag .category-item .sub a {
   color: #ccc;
 }
 
@@ -875,6 +877,7 @@ body.theme #tag .recent-post-item .sub i,
 body.theme #tag .category-item .sub i,
 body.theme #tag .tag-item .sub i {
   color: #000;
+  margin-right: 10px;
 }
 
 body.theme #recent-posts .recent-post-item .sub a,

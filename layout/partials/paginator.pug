@@ -1,9 +1,8 @@
-<% if(page.total > 1) { %>
-<div id="paginator">
-  <%-paginator({
+-
+  var option = {
   prev_text: '<i class="fa fa-angle-left"></i>',
   next_text: '<i class="fa fa-angle-right"></i>',
   escape: false
-})%>
-</div>
-<% } %>
+  }
+if page.total > 1
+  #paginator!= paginator(option)

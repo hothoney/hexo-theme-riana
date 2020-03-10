@@ -1,0 +1,19 @@
+extends partials/layout.pug
+
+block content
+  article#post
+    h1= page.title
+    .sub
+      if page.categories.length > 0
+        .categories
+          i.fas.fa-align-left
+          each item in page.categories
+            a(href=url_for(page.path))= item
+      else
+        .categories
+          i.fas.fa-align-left
+            span 未分类
+      time(datetime=page.date.toJSON())
+        i.far.fa-clock= date(page.date)
+    != page.content
+  include partials/paginator.pug

@@ -1,0 +1,34 @@
+extends partials/layout.pug
+
+block content
+  section.section
+    -
+      const groups = {};
+      const years = [];
+      page.posts.each(post => {
+          const year = post.date.year();
+          if (typeof(groups[year]) === 'undefined') {
+              groups[year] = [];
+              years.push(year);
+          }
+          groups[year].push(post);
+      });
+      years.sort((a, b) => b - a);
+    each year in years
+      h4.year(id=year)= year
+      ul.articles
+        each post in groups[year].sort((a, b) => b.date.diff(a.date))
+          li.article
+            time(datetime=date_xml(post.date),itemprop="datePublished")
+              if post.date.date < 10
+                != post.date.month() + 1
+                | 月
+                != '0' + post.date.date()
+                | 日
+              else
+                != post.date.month() + 1
+                | 月
+                != post.date.date()
+                | 日
+            a(href=url_for(post.link ? post.link : post.path))= post.title
+  include partials/paginator.pug

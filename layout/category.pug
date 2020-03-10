@@ -1,0 +1,14 @@
+extends partials/layout.pug
+
+block content
+  #category
+    h1= page.category + ':'
+    each post in page.posts.toArray()
+      .category-item
+        a(href=url_for(post.path)).post-title= post.title
+        include partials/post-sub.pug
+
+        if post.excerpt.length > 0
+          #excerpt!= post.excerpt
+        a(href=url_for(post.path)).readmore 阅读更多
+  include partials/paginator.pug

@@ -177,8 +177,9 @@ body.theme {
         margin: 10px 0;
         display: flex;
         font-size: 0.8rem;
-        i {
+        i{
           color: $icon-color;
+          margin-right: 10px;
         }
         a {
           line-height: 15px;
