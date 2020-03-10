@@ -2,7 +2,7 @@
   <h1><%=page.category + ':' %></h1>
   <% page.posts.each(article => { %>
   <div class="category-item">
-    <a href="<%=url_for(article.path)%>" class="title">
+    <a href="<%=url_for(article.path)%>" class="post-title">
       <%=article.title%>
     </a>
     <div class="sub">

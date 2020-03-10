@@ -5,14 +5,14 @@ const body = document.body
 var screen_width = document.documentElement.clientWidth > 800 ? true : false;
 barBtn.addEventListener('click', () => {
   // menu.style.display = 'block'
-  menu.style.transform = 'translateX(-100%)'
+  menu.classList.add('menu-opened')
   body.classList.add('body-move')
-  menuBack.style.transform = 'translateX(-100%)'
+  menuBack.classList.add('menu-opened')
 })
 menuBack.addEventListener('click', () => {
-  menu.style.transform = 'translateX(0)'
+  menu.classList.remove('menu-opened')
   body.classList.remove('body-move')
-  menuBack.style.transform = 'translateX(0%)'
+  menuBack.classList.remove('menu-opened')
 })
 // 黑夜模式转换
 const themeSwitch = document.getElementById('theme-switch')
