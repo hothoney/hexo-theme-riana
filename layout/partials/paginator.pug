@@ -1,8 +1,23 @@
 -
-  var option = {
+  var options = {
   prev_text: '<i class="fa fa-angle-left"></i>',
   next_text: '<i class="fa fa-angle-right"></i>',
   escape: false
   }
-if page.total > 1
-  #paginator!= paginator(option)
+if is_post()
+  .switch-post
+    if page.prev
+      .prev-post
+        a(href=url_for(page.prev.path))
+          <i class="fas fa-arrow-left"></i>
+          | 上一篇文章
+        p= page.prev.title
+    if page.next
+      .next-post
+        a(href=url_for(page.next.path))
+          | 下一篇文章 
+          <i class="fas fa-arrow-right"></i>
+        p= page.next.title
+else
+  if page.total > 1
+    #paginator!= paginator(options)

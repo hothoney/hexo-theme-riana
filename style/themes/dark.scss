@@ -47,10 +47,10 @@
         color: #ccc;
       }
     }
-    .recent-post-item a {
+    .post-item a {
       color: #ccc;
     }
-    .recent-post-item .sub {
+    .post-item .sub {
       a,
       span,
       time,
@@ -98,6 +98,10 @@
         }
       }
     }
+  }
+  .directory{
+    background-color: #2a2c35;
+    border: 1px solid rgba(#000, 0.2);
   }
   @media screen and (max-width: 800px) {
     .menubar {

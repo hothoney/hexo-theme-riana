@@ -12,23 +12,13 @@
 
 doctype html
 html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    meta(name="theme-color", content="#2e303a")
-    title= pageTitle
-    link(rel="stylesheet", href=fontAwesomeCdnLink)
-    if theme.stylesheets !== undefined && theme.stylesheets.length > 0
-      each url in theme.stylesheets
-        link(rel="stylesheet", href=url)
+  include head.pug
   body.theme
     script(src="/js/darkmode.js")
-    if theme.enableHeader
+    block fixed
+    if theme.showHeader
       include header.pug
-    include menubar.pug
+    include nav.pug
     .container
       block content
       include footer.pug
-    if theme.scripts !== undefined && theme.scripts.length > 0
-      each url in theme.scripts
-        script(src=url)

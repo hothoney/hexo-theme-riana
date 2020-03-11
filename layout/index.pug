@@ -1,5 +1,8 @@
 extends partials/layout.pug
 
 block content
-  include partials/recent-posts.pug
+  #recent-posts
+    each item in page.posts.toArray()
+      include mixins.pug
+      +make_post_link
   include partials/paginator.pug

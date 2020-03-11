@@ -3,7 +3,7 @@
   .avatar
     a(href = url_for('/'))
       img(src = avatar)
-  if theme.enableSocialIcon
+  if theme.showSocialIcon
     .social
       each social in theme.socials
         if social.link

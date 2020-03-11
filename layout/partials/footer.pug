@@ -2,6 +2,10 @@ footer
   if is_home() || is_post()
     script(src="/js/highlight.pack.js")
     script hljs.initHighlightingOnLoad();
+
+  if theme.scripts !== undefined && theme.scripts.length > 0
+    each url in theme.scripts
+      script(src=url)
   p ©2020
   p Theme 
     span Riana

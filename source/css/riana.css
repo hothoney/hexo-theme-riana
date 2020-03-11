@@ -12,6 +12,18 @@
           box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #555;
+}
+
 .year {
   font-size: 2rem;
   margin: 20px 0 10px 0;
@@ -310,43 +322,86 @@
   background-color: #282a36;
 }
 
-#excerpt .sub,
-#post .sub {
-  margin: 20px 0;
+#excerpt .sub a,
+#post .sub a {
+  color: #333;
+}
+
+.switch-post {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-size: 1rem;
+  margin-top: 50px;
 }
 
-#excerpt .sub i,
-#post .sub i {
-  color: #000;
+.switch-post .prev-post a, .switch-post .next-post a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #333;
 }
 
-#excerpt .sub a,
-#excerpt .sub span,
-#post .sub a,
-#post .sub span {
-  margin-right: 10px;
-  color: #555;
-}
-
-#excerpt .sub a:hover,
-#excerpt .sub span:hover,
-#post .sub a:hover,
-#post .sub span:hover {
+.switch-post .prev-post a:hover, .switch-post .next-post a:hover {
   -webkit-transition: color ease 0.3s;
   transition: color ease 0.3s;
   color: #ff3232;
 }
 
-#excerpt .sub span,
-#post .sub span {
-  color: #555;
+.switch-post .prev-post {
+  text-align: left;
+}
+
+.switch-post .next-post {
+  text-align: right;
+}
+
+@media screen and (max-width: 800px) {
+  .directory, .show-directory {
+    display: none;
+  }
+}
+
+.directory {
+  -webkit-transition: all ease 0.5s;
+  transition: all ease 0.5s;
+  opacity: 0;
+  height: 60vh;
+  padding: 1rem 1rem 1rem 0;
+  position: fixed;
+  top: 20vh;
+  right: 0px;
+  font-size: .9rem;
+  overflow-y: auto;
+  background-color: #fff;
+  border: 1px solid rgba(153, 153, 153, 0.1);
+  z-index: 999;
+}
+
+.directory li {
+  padding: 5px 0;
+  margin-left: 2em;
+}
+
+.directory a {
+  color: #333;
+  text-decoration: none;
+}
+
+.show-directory {
+  opacity: 0;
+  position: fixed;
+  top: 80px;
+  right: 80px;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform ease-out 0.3s;
+  transition: -webkit-transform ease-out 0.3s;
+  transition: transform ease-out 0.3s;
+  transition: transform ease-out 0.3s, -webkit-transform ease-out 0.3s;
 }
 
 /* Dracula Theme v1.2.5
@@ -481,24 +536,24 @@
   color: #ccc;
 }
 
-.theme.dark-mode #recent-posts .recent-post-item a,
-.theme.dark-mode #category .recent-post-item a,
-.theme.dark-mode #tag .recent-post-item a {
+.theme.dark-mode #recent-posts .post-item a,
+.theme.dark-mode #category .post-item a,
+.theme.dark-mode #tag .post-item a {
   color: #ccc;
 }
 
-.theme.dark-mode #recent-posts .recent-post-item .sub a,
-.theme.dark-mode #recent-posts .recent-post-item .sub span,
-.theme.dark-mode #recent-posts .recent-post-item .sub time,
-.theme.dark-mode #recent-posts .recent-post-item .sub i,
-.theme.dark-mode #category .recent-post-item .sub a,
-.theme.dark-mode #category .recent-post-item .sub span,
-.theme.dark-mode #category .recent-post-item .sub time,
-.theme.dark-mode #category .recent-post-item .sub i,
-.theme.dark-mode #tag .recent-post-item .sub a,
-.theme.dark-mode #tag .recent-post-item .sub span,
-.theme.dark-mode #tag .recent-post-item .sub time,
-.theme.dark-mode #tag .recent-post-item .sub i {
+.theme.dark-mode #recent-posts .post-item .sub a,
+.theme.dark-mode #recent-posts .post-item .sub span,
+.theme.dark-mode #recent-posts .post-item .sub time,
+.theme.dark-mode #recent-posts .post-item .sub i,
+.theme.dark-mode #category .post-item .sub a,
+.theme.dark-mode #category .post-item .sub span,
+.theme.dark-mode #category .post-item .sub time,
+.theme.dark-mode #category .post-item .sub i,
+.theme.dark-mode #tag .post-item .sub a,
+.theme.dark-mode #tag .post-item .sub span,
+.theme.dark-mode #tag .post-item .sub time,
+.theme.dark-mode #tag .post-item .sub i {
   color: #aaa;
 }
 
@@ -548,6 +603,11 @@
 .theme.dark-mode .articles li a::before {
   border-color: red;
   background-color: #ff7e7e;
+}
+
+.theme.dark-mode .directory {
+  background-color: #2a2c35;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 @media screen and (max-width: 800px) {
@@ -642,8 +702,10 @@ body.theme .menubar {
   background-color: #fff;
   -webkit-box-shadow: 0 1px 2px rgba(153, 153, 153, 0.1);
           box-shadow: 0 1px 2px rgba(153, 153, 153, 0.1);
-  -webkit-transition: background-color ease 0.5s;
-  transition: background-color ease 0.5s;
+  -webkit-transition: background-color ease 0.5s,opacity ease-out 0.4s,-webkit-transform ease-out 0.4s;
+  transition: background-color ease 0.5s,opacity ease-out 0.4s,-webkit-transform ease-out 0.4s;
+  transition: background-color ease 0.5s,transform ease-out 0.4s,opacity ease-out 0.4s;
+  transition: background-color ease 0.5s,transform ease-out 0.4s,opacity ease-out 0.4s,-webkit-transform ease-out 0.4s;
   z-index: 9999;
 }
 
@@ -713,73 +775,103 @@ body.theme .menubar .menu li a:hover {
   color: #ff3232;
 }
 
-body.theme #recent-posts h1,
-body.theme #category h1,
-body.theme #tag h1 {
+body.theme .sub {
+  margin: 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.8rem;
+}
+
+body.theme .sub i {
+  color: #000;
+  margin-right: 5px;
+}
+
+body.theme .sub a {
+  line-height: 15px;
+  margin-right: 5px;
+  color: #444;
+}
+
+body.theme .sub a:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #ff3232;
+}
+
+body.theme .sub span {
+  color: #444;
+}
+
+body.theme #recent-posts h2,
+body.theme #category h2,
+body.theme #tag h2 {
   margin-bottom: 25px;
 }
 
 body.theme #recent-posts .recent-post-item,
-body.theme #recent-posts .category-item,
+body.theme #recent-posts .post-item,
 body.theme #recent-posts .tag-item,
 body.theme #category .recent-post-item,
-body.theme #category .category-item,
+body.theme #category .post-item,
 body.theme #category .tag-item,
 body.theme #tag .recent-post-item,
-body.theme #tag .category-item,
+body.theme #tag .post-item,
 body.theme #tag .tag-item {
   width: 100%;
-  padding: 30px 0;
-  border-bottom: 1px solid #aaa;
+  padding-bottom: 30px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
 }
 
 body.theme #recent-posts .recent-post-item img,
-body.theme #recent-posts .category-item img,
+body.theme #recent-posts .post-item img,
 body.theme #recent-posts .tag-item img,
 body.theme #category .recent-post-item img,
-body.theme #category .category-item img,
+body.theme #category .post-item img,
 body.theme #category .tag-item img,
 body.theme #tag .recent-post-item img,
-body.theme #tag .category-item img,
+body.theme #tag .post-item img,
 body.theme #tag .tag-item img {
   width: 100%;
   border-radius: 10px;
 }
 
 body.theme #recent-posts .recent-post-item a,
-body.theme #recent-posts .category-item a,
+body.theme #recent-posts .post-item a,
 body.theme #recent-posts .tag-item a,
 body.theme #category .recent-post-item a,
-body.theme #category .category-item a,
+body.theme #category .post-item a,
 body.theme #category .tag-item a,
 body.theme #tag .recent-post-item a,
-body.theme #tag .category-item a,
+body.theme #tag .post-item a,
 body.theme #tag .tag-item a {
   color: #333;
   text-decoration: none;
 }
 
 body.theme #recent-posts .recent-post-item time,
-body.theme #recent-posts .category-item time,
+body.theme #recent-posts .post-item time,
 body.theme #recent-posts .tag-item time,
 body.theme #category .recent-post-item time,
-body.theme #category .category-item time,
+body.theme #category .post-item time,
 body.theme #category .tag-item time,
 body.theme #tag .recent-post-item time,
-body.theme #tag .category-item time,
+body.theme #tag .post-item time,
 body.theme #tag .tag-item time {
   color: #333;
   font-size: 0.9rem;
 }
 
 body.theme #recent-posts .recent-post-item .post-title,
-body.theme #recent-posts .category-item .post-title,
+body.theme #recent-posts .post-item .post-title,
 body.theme #recent-posts .tag-item .post-title,
 body.theme #category .recent-post-item .post-title,
-body.theme #category .category-item .post-title,
+body.theme #category .post-item .post-title,
 body.theme #category .tag-item .post-title,
 body.theme #tag .recent-post-item .post-title,
-body.theme #tag .category-item .post-title,
+body.theme #tag .post-item .post-title,
 body.theme #tag .tag-item .post-title {
   display: block;
   font-size: 1.4rem;
@@ -789,38 +881,38 @@ body.theme #tag .tag-item .post-title {
 }
 
 body.theme #recent-posts .recent-post-item .post-title:hover::before,
-body.theme #recent-posts .category-item .post-title:hover::before,
+body.theme #recent-posts .post-item .post-title:hover::before,
 body.theme #recent-posts .tag-item .post-title:hover::before,
 body.theme #category .recent-post-item .post-title:hover::before,
-body.theme #category .category-item .post-title:hover::before,
+body.theme #category .post-item .post-title:hover::before,
 body.theme #category .tag-item .post-title:hover::before,
 body.theme #tag .recent-post-item .post-title:hover::before,
-body.theme #tag .category-item .post-title:hover::before,
+body.theme #tag .post-item .post-title:hover::before,
 body.theme #tag .tag-item .post-title:hover::before {
   background-color: #ff3232;
 }
 
 body.theme #recent-posts .recent-post-item .post-title:hover::after,
-body.theme #recent-posts .category-item .post-title:hover::after,
+body.theme #recent-posts .post-item .post-title:hover::after,
 body.theme #recent-posts .tag-item .post-title:hover::after,
 body.theme #category .recent-post-item .post-title:hover::after,
-body.theme #category .category-item .post-title:hover::after,
+body.theme #category .post-item .post-title:hover::after,
 body.theme #category .tag-item .post-title:hover::after,
 body.theme #tag .recent-post-item .post-title:hover::after,
-body.theme #tag .category-item .post-title:hover::after,
+body.theme #tag .post-item .post-title:hover::after,
 body.theme #tag .tag-item .post-title:hover::after {
   background-image: -webkit-gradient(linear, left top, right top, from(#ff3232), to(rgba(255, 255, 255, 0)));
   background-image: linear-gradient(to right, #ff3232, rgba(255, 255, 255, 0));
 }
 
 body.theme #recent-posts .recent-post-item .post-title::before,
-body.theme #recent-posts .category-item .post-title::before,
+body.theme #recent-posts .post-item .post-title::before,
 body.theme #recent-posts .tag-item .post-title::before,
 body.theme #category .recent-post-item .post-title::before,
-body.theme #category .category-item .post-title::before,
+body.theme #category .post-item .post-title::before,
 body.theme #category .tag-item .post-title::before,
 body.theme #tag .recent-post-item .post-title::before,
-body.theme #tag .category-item .post-title::before,
+body.theme #tag .post-item .post-title::before,
 body.theme #tag .tag-item .post-title::before {
   content: '';
   width: 7px;
@@ -833,13 +925,13 @@ body.theme #tag .tag-item .post-title::before {
 }
 
 body.theme #recent-posts .recent-post-item .post-title::after,
-body.theme #recent-posts .category-item .post-title::after,
+body.theme #recent-posts .post-item .post-title::after,
 body.theme #recent-posts .tag-item .post-title::after,
 body.theme #category .recent-post-item .post-title::after,
-body.theme #category .category-item .post-title::after,
+body.theme #category .post-item .post-title::after,
 body.theme #category .tag-item .post-title::after,
 body.theme #tag .recent-post-item .post-title::after,
-body.theme #tag .category-item .post-title::after,
+body.theme #tag .post-item .post-title::after,
 body.theme #tag .tag-item .post-title::after {
   content: '';
   width: 100px;
@@ -851,94 +943,34 @@ body.theme #tag .tag-item .post-title::after {
   bottom: -14px;
 }
 
-body.theme #recent-posts .recent-post-item .sub,
-body.theme #recent-posts .category-item .sub,
-body.theme #recent-posts .tag-item .sub,
-body.theme #category .recent-post-item .sub,
-body.theme #category .category-item .sub,
-body.theme #category .tag-item .sub,
-body.theme #tag .recent-post-item .sub,
-body.theme #tag .category-item .sub,
-body.theme #tag .tag-item .sub {
-  margin: 10px 0;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  font-size: 0.8rem;
-}
-
-body.theme #recent-posts .recent-post-item .sub i,
-body.theme #recent-posts .category-item .sub i,
-body.theme #recent-posts .tag-item .sub i,
-body.theme #category .recent-post-item .sub i,
-body.theme #category .category-item .sub i,
-body.theme #category .tag-item .sub i,
-body.theme #tag .recent-post-item .sub i,
-body.theme #tag .category-item .sub i,
-body.theme #tag .tag-item .sub i {
-  color: #000;
-  margin-right: 10px;
-}
-
-body.theme #recent-posts .recent-post-item .sub a,
-body.theme #recent-posts .category-item .sub a,
-body.theme #recent-posts .tag-item .sub a,
-body.theme #category .recent-post-item .sub a,
-body.theme #category .category-item .sub a,
-body.theme #category .tag-item .sub a,
-body.theme #tag .recent-post-item .sub a,
-body.theme #tag .category-item .sub a,
-body.theme #tag .tag-item .sub a {
-  line-height: 15px;
-  color: #444;
-}
-
-body.theme #recent-posts .recent-post-item .sub a:hover,
-body.theme #recent-posts .category-item .sub a:hover,
-body.theme #recent-posts .tag-item .sub a:hover,
-body.theme #category .recent-post-item .sub a:hover,
-body.theme #category .category-item .sub a:hover,
-body.theme #category .tag-item .sub a:hover,
-body.theme #tag .recent-post-item .sub a:hover,
-body.theme #tag .category-item .sub a:hover,
-body.theme #tag .tag-item .sub a:hover {
-  -webkit-transition: color ease 0.3s;
-  transition: color ease 0.3s;
-  color: #ff3232;
-}
-
-body.theme #recent-posts .recent-post-item .sub span,
-body.theme #recent-posts .category-item .sub span,
-body.theme #recent-posts .tag-item .sub span,
-body.theme #category .recent-post-item .sub span,
-body.theme #category .category-item .sub span,
-body.theme #category .tag-item .sub span,
-body.theme #tag .recent-post-item .sub span,
-body.theme #tag .category-item .sub span,
-body.theme #tag .tag-item .sub span {
-  color: #444;
-}
-
-body.theme #recent-posts .recent-post-item .categories,
-body.theme #recent-posts .category-item .categories,
+body.theme #recent-posts .recent-post-item .categories, body.theme #recent-posts .recent-post-item .tags,
+body.theme #recent-posts .post-item .categories,
+body.theme #recent-posts .post-item .tags,
 body.theme #recent-posts .tag-item .categories,
+body.theme #recent-posts .tag-item .tags,
 body.theme #category .recent-post-item .categories,
-body.theme #category .category-item .categories,
+body.theme #category .recent-post-item .tags,
+body.theme #category .post-item .categories,
+body.theme #category .post-item .tags,
 body.theme #category .tag-item .categories,
+body.theme #category .tag-item .tags,
 body.theme #tag .recent-post-item .categories,
-body.theme #tag .category-item .categories,
-body.theme #tag .tag-item .categories {
+body.theme #tag .recent-post-item .tags,
+body.theme #tag .post-item .categories,
+body.theme #tag .post-item .tags,
+body.theme #tag .tag-item .categories,
+body.theme #tag .tag-item .tags {
   margin-right: 10px;
 }
 
 body.theme #recent-posts .recent-post-item #excerpt,
-body.theme #recent-posts .category-item #excerpt,
+body.theme #recent-posts .post-item #excerpt,
 body.theme #recent-posts .tag-item #excerpt,
 body.theme #category .recent-post-item #excerpt,
-body.theme #category .category-item #excerpt,
+body.theme #category .post-item #excerpt,
 body.theme #category .tag-item #excerpt,
 body.theme #tag .recent-post-item #excerpt,
-body.theme #tag .category-item #excerpt,
+body.theme #tag .post-item #excerpt,
 body.theme #tag .tag-item #excerpt {
   margin: 0 auto;
   margin-bottom: 10px;
@@ -946,13 +978,13 @@ body.theme #tag .tag-item #excerpt {
 }
 
 body.theme #recent-posts .recent-post-item #excerpt a,
-body.theme #recent-posts .category-item #excerpt a,
+body.theme #recent-posts .post-item #excerpt a,
 body.theme #recent-posts .tag-item #excerpt a,
 body.theme #category .recent-post-item #excerpt a,
-body.theme #category .category-item #excerpt a,
+body.theme #category .post-item #excerpt a,
 body.theme #category .tag-item #excerpt a,
 body.theme #tag .recent-post-item #excerpt a,
-body.theme #tag .category-item #excerpt a,
+body.theme #tag .post-item #excerpt a,
 body.theme #tag .tag-item #excerpt a {
   color: #ff3232;
   -webkit-transition: all ease 0.3s;
@@ -961,13 +993,13 @@ body.theme #tag .tag-item #excerpt a {
 }
 
 body.theme #recent-posts .recent-post-item #excerpt a::after,
-body.theme #recent-posts .category-item #excerpt a::after,
+body.theme #recent-posts .post-item #excerpt a::after,
 body.theme #recent-posts .tag-item #excerpt a::after,
 body.theme #category .recent-post-item #excerpt a::after,
-body.theme #category .category-item #excerpt a::after,
+body.theme #category .post-item #excerpt a::after,
 body.theme #category .tag-item #excerpt a::after,
 body.theme #tag .recent-post-item #excerpt a::after,
-body.theme #tag .category-item #excerpt a::after,
+body.theme #tag .post-item #excerpt a::after,
 body.theme #tag .tag-item #excerpt a::after {
   content: '';
   position: absolute;
@@ -981,62 +1013,62 @@ body.theme #tag .tag-item #excerpt a::after {
 }
 
 body.theme #recent-posts .recent-post-item #excerpt a:hover,
-body.theme #recent-posts .category-item #excerpt a:hover,
+body.theme #recent-posts .post-item #excerpt a:hover,
 body.theme #recent-posts .tag-item #excerpt a:hover,
 body.theme #category .recent-post-item #excerpt a:hover,
-body.theme #category .category-item #excerpt a:hover,
+body.theme #category .post-item #excerpt a:hover,
 body.theme #category .tag-item #excerpt a:hover,
 body.theme #tag .recent-post-item #excerpt a:hover,
-body.theme #tag .category-item #excerpt a:hover,
+body.theme #tag .post-item #excerpt a:hover,
 body.theme #tag .tag-item #excerpt a:hover {
   color: #ff3232;
 }
 
 body.theme #recent-posts .recent-post-item #excerpt a:hover::after,
-body.theme #recent-posts .category-item #excerpt a:hover::after,
+body.theme #recent-posts .post-item #excerpt a:hover::after,
 body.theme #recent-posts .tag-item #excerpt a:hover::after,
 body.theme #category .recent-post-item #excerpt a:hover::after,
-body.theme #category .category-item #excerpt a:hover::after,
+body.theme #category .post-item #excerpt a:hover::after,
 body.theme #category .tag-item #excerpt a:hover::after,
 body.theme #tag .recent-post-item #excerpt a:hover::after,
-body.theme #tag .category-item #excerpt a:hover::after,
+body.theme #tag .post-item #excerpt a:hover::after,
 body.theme #tag .tag-item #excerpt a:hover::after {
   width: 100%;
 }
 
 body.theme #recent-posts .recent-post-item .readmore,
-body.theme #recent-posts .category-item .readmore,
+body.theme #recent-posts .post-item .readmore,
 body.theme #recent-posts .tag-item .readmore,
 body.theme #category .recent-post-item .readmore,
-body.theme #category .category-item .readmore,
+body.theme #category .post-item .readmore,
 body.theme #category .tag-item .readmore,
 body.theme #tag .recent-post-item .readmore,
-body.theme #tag .category-item .readmore,
+body.theme #tag .post-item .readmore,
 body.theme #tag .tag-item .readmore {
   font-weight: 700;
 }
 
 body.theme #recent-posts .recent-post-item .readmore:hover::after,
-body.theme #recent-posts .category-item .readmore:hover::after,
+body.theme #recent-posts .post-item .readmore:hover::after,
 body.theme #recent-posts .tag-item .readmore:hover::after,
 body.theme #category .recent-post-item .readmore:hover::after,
-body.theme #category .category-item .readmore:hover::after,
+body.theme #category .post-item .readmore:hover::after,
 body.theme #category .tag-item .readmore:hover::after,
 body.theme #tag .recent-post-item .readmore:hover::after,
-body.theme #tag .category-item .readmore:hover::after,
+body.theme #tag .post-item .readmore:hover::after,
 body.theme #tag .tag-item .readmore:hover::after {
   letter-spacing: 3px;
   color: #ff3232;
 }
 
 body.theme #recent-posts .recent-post-item .readmore::after,
-body.theme #recent-posts .category-item .readmore::after,
+body.theme #recent-posts .post-item .readmore::after,
 body.theme #recent-posts .tag-item .readmore::after,
 body.theme #category .recent-post-item .readmore::after,
-body.theme #category .category-item .readmore::after,
+body.theme #category .post-item .readmore::after,
 body.theme #category .tag-item .readmore::after,
 body.theme #tag .recent-post-item .readmore::after,
-body.theme #tag .category-item .readmore::after,
+body.theme #tag .post-item .readmore::after,
 body.theme #tag .tag-item .readmore::after {
   content: '····>';
   -webkit-transition: all ease 0.3s;
@@ -1205,5 +1237,23 @@ body.theme footer a:hover::after {
   body.theme .menubar .menu li a {
     display: block;
   }
+}
+
+.fade-in {
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  opacity: 1;
+}
+
+.fade-out {
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
+  opacity: 0;
+  z-index: -1;
+}
+
+.rotate {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
 }
 /*# sourceMappingURL=riana.css.map */

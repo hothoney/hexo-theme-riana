@@ -2,13 +2,8 @@ extends partials/layout.pug
 
 block content
   #category
-    h1= page.category + ':'
-    each post in page.posts.toArray()
-      .category-item
-        a(href=url_for(post.path)).post-title= post.title
-        include partials/post-sub.pug
-
-        if post.excerpt.length > 0
-          #excerpt!= post.excerpt
-        a(href=url_for(post.path)).readmore 阅读更多
+    h2= page.category + ':'
+    each item in page.posts.toArray()
+      include mixins.pug
+      +make_post_link
   include partials/paginator.pug

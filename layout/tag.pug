@@ -1,4 +1,9 @@
 extends partials/layout.pug
 
 block content
-  h1 正在施工...
+  #tag
+    h2= page.tag + ':'
+    each item in page.posts.toArray()
+      include mixins.pug
+      +make_post_link
+    include partials/paginator.pug

@@ -41,3 +41,61 @@ function loadThemeIcon() {
   }
 }
 loadThemeIcon()
+// 切换显示目录
+const headerHeight = 225
+const menubar = document.querySelector('.menubar')
+const directory = document.querySelector('.directory')
+let beforeScroll = 0
+const showDirBtn = document.getElementById('show-directory')
+if (directory !== null) {
+  let dirIsOpen = directory.classList.contains('fade-in') ? true : false
+}
+if (showDirBtn !== null) {
+  showDirBtn.addEventListener('click', () => {
+    if (!dirIsOpen) {
+      directory.classList.add('fade-in')
+      directory.classList.remove('fade-out')
+      showDirBtn.classList.remove('rotate')
+      dirIsOpen = true
+    }
+    else {
+      directory.classList.remove('fade-in')
+      directory.classList.add('fade-out')
+      showDirBtn.classList.add('rotate')
+      dirIsOpen = false
+    }
+  })
+}
+// 导航栏滚动隐藏
+
+window.addEventListener('scroll', () => {
+  const scrolls = document.documentElement.scrollTop - headerHeight
+  if (scrolls > 30) {
+    if (directory !== null) {
+      showDirBtn.classList.add('fade-in')
+      showDirBtn.classList.remove('fade-out')
+      directory.classList.add('fade-in')
+      directory.classList.remove('fade-out')
+    }
+    let delta = scrolls - beforeScroll
+    if (delta > 0) {
+      menubar.classList.remove('fade-in')
+      menubar.classList.add('fade-out')
+      dirIsOpen = true
+    }
+    else {
+      menubar.classList.remove('fade-out')
+      menubar.classList.add('fade-in')
+      dirIsOpen = false
+    }
+    beforeScroll = scrolls
+  }
+  else {
+    if (directory !== null) {
+      directory.classList.remove('fade-in')
+      directory.classList.add('fade-out')
+      showDirBtn.classList.remove('fade-in')
+      showDirBtn.classList.add('fade-out')
+    }
+  }
+})

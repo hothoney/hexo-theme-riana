@@ -2,18 +2,20 @@ extends partials/layout.pug
 
 block content
   article#post
-    h1= page.title
-    .sub
-      if page.categories.length > 0
-        .categories
-          i.fas.fa-align-left
-          each item in page.categories
-            a(href=url_for(page.path))= item
-      else
-        .categories
-          i.fas.fa-align-left
-            span 未分类
-      time(datetime=page.date.toJSON())
-        i.far.fa-clock= date(page.date)
+    h2= page.title
+    -var item = page
+    include mixins.pug
+    +make_post_sub
     != page.content
   include partials/paginator.pug
+
+block fixed
+  -
+    let toc_options = {
+      list_number: false,
+      max_depth: 2
+    }
+  .show-directory#show-directory
+    i.fa.fa-angle-up
+  .directory
+    != toc(page.content, toc_options)
