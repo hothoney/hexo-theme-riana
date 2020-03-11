@@ -1,7 +1,7 @@
 const barBtn = document.getElementById('bar')
-const menu = document.querySelector('.menu')
+const menu = document.querySelector('.menu-items')
 const menuBack = document.querySelector('.back')
-const body = document.body
+const body = document.querySelector('.main')
 var screen_width = document.documentElement.clientWidth > 800 ? true : false;
 barBtn.addEventListener('click', () => {
   // menu.style.display = 'block'

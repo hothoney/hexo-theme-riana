@@ -404,6 +404,44 @@
   transition: transform ease-out 0.3s, -webkit-transform ease-out 0.3s;
 }
 
+.category-list .category-list-item {
+  padding: 5px 0;
+}
+
+.category-list .category-list-item a {
+  color: #444;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.category-list .category-list-item a:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #ff3232;
+}
+
+.category-list .category-list-item span {
+  height: 1.2rem;
+  width: 1.2rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  color: #fff;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: .8rem;
+  background-color: #ff3232;
+  border-radius: 50%;
+}
+
+.category-list .category-list-child {
+  padding-left: 2em;
+}
+
 /* Dracula Theme v1.2.5
  *
  * https://github.com/dracula/highlightjs
@@ -611,12 +649,15 @@
 }
 
 @media screen and (max-width: 800px) {
-  .theme.dark-mode .menubar .back {
+  .theme.dark-mode .back {
     background-color: rgba(0, 0, 0, 0.3);
   }
-  .theme.dark-mode .menubar .menu {
+  .theme.dark-mode .menu-items {
     background-color: #2e303a;
     border-left: #000 solid 1px;
+  }
+  .theme.dark-mode .menu-items li > a {
+    color: #aaa;
   }
 }
 
@@ -633,6 +674,54 @@ body.theme {
   transition: background-color ease 0.5s,-webkit-transform ease-out 0.3s;
   transition: transform ease-out 0.3s,background-color ease 0.5s;
   transition: transform ease-out 0.3s,background-color ease 0.5s,-webkit-transform ease-out 0.3s;
+}
+
+body.theme .menu-items {
+  height: 100%;
+  width: 70%;
+  max-width: 400px;
+  position: fixed;
+  top: 0;
+  right: -70%;
+  list-style: none;
+  z-index: 10000;
+  padding-top: 20px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #fff;
+  border-left: #eee solid 1px;
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+
+body.theme .menu-items li {
+  padding: 15px 20px;
+}
+
+body.theme .menu-items li a {
+  display: block;
+  color: #333;
+  text-decoration: none;
+}
+
+body.theme .menu-items li a:hover {
+  -webkit-transition: color ease 0.3s;
+  transition: color ease 0.3s;
+  color: #ff3232;
+}
+
+body.theme .outter .back {
+  -webkit-transition: all ease-out 0.3s;
+  transition: all ease-out 0.3s;
+}
+
+body.theme .main {
+  -webkit-transition: -webkit-transform ease-out 0.3s;
+  transition: -webkit-transform ease-out 0.3s;
+  transition: transform ease-out 0.3s;
+  transition: transform ease-out 0.3s, -webkit-transform ease-out 0.3s;
 }
 
 body.theme .container {
@@ -728,13 +817,6 @@ body.theme .menubar #bar {
   font-size: 1.2rem;
   cursor: pointer;
   display: none;
-}
-
-body.theme .menubar .back {
-  -webkit-transition: all ease-out 0.3s;
-  transition: all ease-out 0.3s;
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
 }
 
 body.theme .menubar::before {
@@ -1196,7 +1278,21 @@ body.theme footer a:hover::after {
   body.theme .menubar i {
     margin-right: 40px;
   }
-  body.theme .menubar .back {
+  body.theme .menubar #bar {
+    display: block;
+  }
+  body.theme .menubar .menu {
+    display: none;
+  }
+  body.theme .menu-opened {
+    overflow: hidden;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  body.theme .back {
     position: fixed;
     background-color: rgba(255, 255, 255, 0.2);
     width: 100%;
@@ -1204,38 +1300,6 @@ body.theme footer a:hover::after {
     top: 0;
     right: -100%;
     z-index: 5;
-  }
-  body.theme .menubar .menu-opened {
-    overflow: hidden;
-    -webkit-transform: translateX(-100%);
-            transform: translateX(-100%);
-  }
-  body.theme .menubar #bar {
-    display: block;
-  }
-  body.theme .menubar .menu {
-    z-index: 10;
-    width: 70%;
-    max-width: 400px;
-    height: 100%;
-    position: fixed;
-    right: -70%;
-    top: 0;
-    padding-top: 20px;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    background-color: #fff;
-    border-left: #eee solid 1px;
-    -webkit-transition: all ease-out 0.3s;
-    transition: all ease-out 0.3s;
-  }
-  body.theme .menubar .menu li {
-    padding: 15px 20px;
-  }
-  body.theme .menubar .menu li a {
-    display: block;
   }
 }
 

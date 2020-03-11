@@ -14,11 +14,17 @@ doctype html
 html(lang="en")
   include head.pug
   body.theme
-    script(src="/js/darkmode.js")
-    block fixed
-    if theme.showHeader
-      include header.pug
-    include nav.pug
-    .container
-      block content
-      include footer.pug
+    .outter
+      block outter
+      include ../mixins.pug
+      +make_menu
+      .back
+    .main
+      script(src="/js/darkmode.js")
+      block fixed
+      if theme.showHeader
+        include header.pug
+      include nav.pug
+      .container
+        block content
+        include footer.pug

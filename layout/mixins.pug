@@ -26,3 +26,9 @@ mixin make_post_sub
     time(datetime=item.date.toJSON())
       i.far.fa-clock
       = date(item.date)
+
+mixin make_menu
+  ul.menu-items
+    each url, label in theme.menu
+      li.menu-item
+        a(href=url)= label

@@ -1,0 +1,25 @@
+.category-list{
+  .category-list-item{
+    padding: 5px 0;
+    a{
+      color: $sub-color;
+      margin-right: 10px;
+      text-decoration: none;
+      @include hover-color
+    }
+    span{
+      height: 1.2rem;
+      width: 1.2rem;
+      display: inline-flex;
+      color: #fff;
+      justify-content: center;
+      align-items: center;
+      font-size: .8rem;
+      background-color: $primary;
+      border-radius: 50%;
+    }
+  }
+  .category-list-child{
+    padding-left: 2em;
+  }
+}

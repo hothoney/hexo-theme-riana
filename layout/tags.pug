@@ -1,0 +1,13 @@
+extends partials/layout.pug
+
+block content
+  -
+    let tagcloud_options = {
+      min_font:1.2,
+      max_font:1.8,
+      unit:'rem',
+      color:true,
+      start_color:'rgba(255, 144, 144,1)',
+      end_color:'rgba(255, 57, 57,1)'
+    }
+  != tagcloud(tagcloud_options)

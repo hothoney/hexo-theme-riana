@@ -104,13 +104,14 @@
     border: 1px solid rgba(#000, 0.2);
   }
   @media screen and (max-width: 800px) {
-    .menubar {
-      .back {
-        background-color: rgba(#000, 0.3);
-      }
-      .menu {
-        background-color: #2e303a;
-        border-left: #000 solid 1px;
+    .back {
+      background-color: rgba(#000, 0.3);
+    }
+    .menu-items {
+      background-color: #2e303a;
+      border-left: #000 solid 1px;
+      li > a{
+        color: #aaa;
       }
     }
   }
