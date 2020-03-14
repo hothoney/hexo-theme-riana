@@ -1,17 +1,13 @@
-<center>
-  <h2>
-    Riana
-  </h2>
-</center>
+<h2 align="center">Riana</h2>
 
-<center>
+<p  align="center">
 A simple and responsive theme for hexo.
-</center>
+</p  align="center">
 
-<center>
+<div align="center">
 
-[Preview](https://hexo.hoon.cc/)
-</center>
+  [Preview](https://riana.hoon.cc/)
+</div>
 
 ![Index preview](https://evernote-pics.oss-cn-shenzhen.aliyuncs.com/img/index-preview.jpg)
 
@@ -33,21 +29,19 @@ Too bright？Turn off the light will make you feel much better.
 
 ### Download and extract or Git clone  Riana from Github into themes folder:
 
-`git clone git@github.com:hothoney/riana`
+`git clone git@github.com:hothoney/hexo-theme-riana themes/riana`
 
 ### Install dependencies:
 
 For yarn user:
 ```shell
 yarn add hexo-renderer-jade
-# Optional
 yarn add hexo-renderer-scss
 ```
 
 For npm user:
 ```shell
 npm i hexo-renderer-jade
-# Optional
 npm i hexo-renderer-scss
 ```
 
